@@ -27,8 +27,10 @@ In a terminal emulator / shell:
 2. Open the containing folder `$ cd showapp`
 3. Install Node and NPM (See Node.js website for further info)
 4. Install Angular CLI `$ npm install -g @angular/cli`
-5. Run the Angular project `$ ng serve`
-6. Open the URL `http://localhost:4200` in a web browser
+5. Install Yarn `$ npm install -g yarn`
+6. Install all the dependencies `$ npm i` then run Yarn `$ yarn`
+7. Run the Angular project `$ ng serve`
+8. Open the URL `http://localhost:4200` in a web browser
 
 ---
 
