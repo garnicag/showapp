@@ -1,0 +1,16 @@
+<div class="search-wrapper">
+  <i class="fa fa-search" aria-hidden="true"></i>
+  <input type="text" placeholder="Search for series" class="search-box" (keydown.enter)="getSeriesList($event.target.value)">
+</div>
+
+<div class="results-wrapper">
+  <h2>Discover new series</h2>
+  
+  <div class="results" *ngFor="let serie of series">
+    <app-result [idProd]="serie.id" prodType="typeSeries"></app-result>
+  </div>
+
+  <div class="no-results" *ngIf="!this.hasResults">
+    No results, sorry
+  </div>
+</div>

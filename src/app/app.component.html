@@ -1,0 +1,10 @@
+<header>
+  <h1>Showapp</h1>
+  <ul class="navigation">
+    <li><a [routerLink]="['movies']" [routerLinkActive]="['active-item']">Movies</a></li>
+    <li><a [routerLink]="['series']" [routerLinkActive]="['active-item']">Series</a></li>
+    <li><a [routerLink]="['favorites']" [routerLinkActive]="['active-item']">Favorites</a></li>
+  </ul>
+</header>
+
+<router-outlet></router-outlet>

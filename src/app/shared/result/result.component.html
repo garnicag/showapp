@@ -1,0 +1,44 @@
+<div class="result-element" *ngIf="this.prodType === 'typeMovie'">
+  
+  <img src="{{this.poster}}" class="poster" src-fallback="/assets/poster.jpg">
+  
+  <div class="result-details">
+    <h3>{{this.details?.title}}</h3>
+    <strong>{{this.runtimeFormated}} | {{this.releaseDate}} | {{this.genre && this.genre[0]?.name}}</strong>
+    <p>{{this.details?.overview}}</p>
+
+    <span class="result-votes">{{this.details?.vote_average}}</span>
+
+    <button class="add-fav" (click)="toggleFav()" [ngClass]="{'is-fav':isFavorite}">
+      <span *ngIf="!isFavorite">Add to Favorites</span>
+      <span *ngIf="isFavorite">Remove from Favorites</span>
+      <i class="fa fa-heart" aria-hidden="true"></i>
+    </button>
+  </div>
+
+  <p>
+  </p>
+</div>
+
+
+<div class="result-element" *ngIf="this.prodType === 'typeSeries'">
+  <img src="{{this.poster}}" class="poster" src-fallback="/assets/poster.jpg">
+  
+  <div class="result-details">
+    <h3>{{this.details?.name}}</h3>
+    <strong>{{this.details?.episode_run_time}} Minutes | {{this.details?.number_of_seasons}} Seasons | {{this.details?.number_of_episodes}} Episodes</strong>
+    <p>{{this.details?.overview}}</p>
+
+    <span class="result-votes">{{this.details?.vote_average}}</span>
+
+    <button class="add-fav" (click)="toggleFav()" [ngClass]="{'is-fav':isFavorite}">
+      <span *ngIf="!isFavorite">Add to Favorites</span>
+      <span *ngIf="isFavorite">Remove from Favorites</span>
+      <i class="fa fa-heart" aria-hidden="true"></i>
+    </button>
+  </div>
+
+  <p>
+  </p>
+</div>
+  

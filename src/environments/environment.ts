@@ -1,8 +1,18 @@
-// The file contents for the current environment will overwrite these during build.
-// The build system defaults to the dev environment which uses `environment.ts`, but if you do
-// `ng build --env=prod` then `environment.prod.ts` will be used instead.
-// The list of which env maps to which file can be found in `.angular-cli.json`.
+//TheMovieDB API keys
+const API_KEY = '648ad8542737e23f6cfadc33be2ebfda',
+      API_URL = 'https://api.themoviedb.org/3';
 
 export const environment = {
-  production: false
+  production: false,
+
+  //TheMovieDB API details
+  apiParams: '?api_key=' + API_KEY + '&language=en-US',
+  
+  apiSearchMovie: API_URL + '/search/movie',
+  apiDetailsMovie: API_URL + '/movie/',
+  
+  apiSearchTv: API_URL + '/search/tv',
+  apiDetailsTv: API_URL + '/tv/',
+
+  apiPosterPath: 'https://image.tmdb.org/t/p/w500/'
 };
