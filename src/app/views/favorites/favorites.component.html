@@ -1,6 +1,6 @@
 <div class="results-wrapper">
   <h2>My favorite movies</h2>
-  
+
   <div class="results" *ngFor="let movie of movies">
     <app-result [idProd]="movie" prodType="typeMovie"></app-result>
   </div>
@@ -11,13 +11,13 @@
 </div>
 
 <div class="results-wrapper">
-    <h2>My favorite series</h2>
-    
-    <div class="results" *ngFor="let serie of series">
-      <app-result [idProd]="serie" prodType="typeSeries"></app-result>
-    </div>
-  
-    <div class="no-results" *ngIf="!this.hasResultsSeries">
-      No favorite Series
-    </div>
+  <h2>My favorite series</h2>
+
+  <div class="results" *ngFor="let serie of series">
+    <app-result [idProd]="serie" prodType="typeSeries"></app-result>
   </div>
+
+  <div class="no-results" *ngIf="!this.hasResultsSeries">
+    No favorite Series
+  </div>
+</div>

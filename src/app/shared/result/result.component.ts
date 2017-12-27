@@ -20,7 +20,7 @@ export class ResultComponent {
   isFavorite: boolean;
 
   constructor(public searchService: SearchService) {};
-  
+
   ngOnInit() {
     this.getDetails(this.idProd, this.prodType);
     this.isFavorite = this.checkFav(this.idProd, this.prodType);
@@ -42,7 +42,6 @@ export class ResultComponent {
         result => {
           this.details = result,
           this.poster = environment.apiPosterPath + result.poster_path
-          //this.runtimeFormated = moment().hours(0).minutes(0).add(result.episode_run_time, 'minutes').format('hh[h] mm[min]')
         }
       );
     }
@@ -50,7 +49,7 @@ export class ResultComponent {
 
   toggleFav() {
     let typeList = "favMovies";
-    
+
     if (this.prodType === 'typeSeries') {
       typeList = "favSeries";
     }
@@ -71,7 +70,7 @@ export class ResultComponent {
 
   checkFav(idProd, prodType) {
     let typeList = "favMovies";
-    
+
     if (this.prodType === 'typeSeries') {
       typeList = "favSeries";
     }
@@ -82,6 +81,10 @@ export class ResultComponent {
     if (index > -1) {
       return true;
     }
+  }
+
+  viewTrailer() {
+    console.log('this is the trailer');
   }
 
 }

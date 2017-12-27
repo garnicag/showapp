@@ -5,8 +5,8 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './favorites.component.html'
 })
 export class FavoritesComponent implements OnInit {
-  movies;
-  series;
+  movies = [];
+  series = [];
   hasResultsMovies: boolean = false;
   hasResultsSeries: boolean = false;
 
@@ -23,7 +23,7 @@ export class FavoritesComponent implements OnInit {
   getMoviesList() {
     this.movies = JSON.parse(localStorage.getItem('favMovies'));
 
-    if (this.movies.length > 0) {
+    if (this.movies !== null && this.movies.length > 0) {
       this.hasResultsMovies = true;
     } else {
       this.hasResultsMovies = false;
@@ -33,7 +33,7 @@ export class FavoritesComponent implements OnInit {
   getSeriesList() {
     this.series = JSON.parse(localStorage.getItem('favSeries'));
 
-    if (this.series.length > 0) {
+    if (this.series !== null && this.series.length > 0) {
       this.hasResultsSeries = true;
     } else {
       this.hasResultsSeries = false;
