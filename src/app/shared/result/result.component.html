@@ -10,7 +10,7 @@
     <span class="result-votes">{{this.details?.vote_average}}</span>
 
     <button class="view-trailer" (click)="viewTrailer()" *ngIf="this.videoId !== undefined">
-      View Trailer
+      Watch Trailer
     </button>
 
     <button class="add-fav" (click)="toggleFav()" [ngClass]="{'is-fav':isFavorite}">
@@ -37,7 +37,7 @@
     <span class="result-votes">{{this.details?.vote_average}}</span>
 
     <button class="view-trailer" (click)="viewTrailer()" *ngIf="this.videoId !== undefined">
-      View Trailer
+      Watch Trailer
     </button>
 
     <button class="add-fav" (click)="toggleFav()" [ngClass]="{'is-fav':isFavorite}">
