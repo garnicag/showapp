@@ -10,6 +10,7 @@ import { MoviesComponent } from './views/movies/movies.component';
 import { SeriesComponent } from './views/series/series.component';
 import { ResultComponent } from './shared/result/result.component';
 import { FavoritesComponent } from './views/favorites/favorites.component';
+import { TrailerComponent } from './shared/trailer/trailer.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FavoritesComponent } from './views/favorites/favorites.component';
     MoviesComponent,
     SeriesComponent,
     ResultComponent,
-    FavoritesComponent
+    FavoritesComponent,
+    TrailerComponent
   ],
   imports: [
     BrowserModule,

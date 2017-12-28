@@ -9,7 +9,7 @@
 
     <span class="result-votes">{{this.details?.vote_average}}</span>
 
-    <button class="view-trailer" (click)="viewTrailer()">
+    <button class="view-trailer" (click)="viewTrailer()" *ngIf="this.videoId !== undefined">
       View Trailer
     </button>
 
@@ -20,8 +20,9 @@
     </button>
   </div>
 
-  <p>
-  </p>
+
+  <app-trailer *ngIf="this.showVideo" (closeTrailer)="closeTrailer()" [videoId]="this.videoId"></app-trailer>
+
 </div>
 
 
@@ -35,7 +36,7 @@
 
     <span class="result-votes">{{this.details?.vote_average}}</span>
 
-    <button class="view-trailer" (click)="viewTrailer()">
+    <button class="view-trailer" (click)="viewTrailer()" *ngIf="this.videoId !== undefined">
       View Trailer
     </button>
 
@@ -46,6 +47,5 @@
     </button>
   </div>
 
-  <p>
-  </p>
+  <app-trailer *ngIf="this.showVideo" (closeTrailer)="closeTrailer()" [videoId]="this.videoId"></app-trailer>
 </div>

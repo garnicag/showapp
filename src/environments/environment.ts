@@ -7,12 +7,14 @@ export const environment = {
 
   //TheMovieDB API details
   apiParams: '?api_key=' + API_KEY + '&language=en-US',
-  
+
   apiSearchMovie: API_URL + '/search/movie',
   apiDetailsMovie: API_URL + '/movie/',
-  
+  apiVideos: '/videos',
+
   apiSearchTv: API_URL + '/search/tv',
   apiDetailsTv: API_URL + '/tv/',
+  apiVideosTv: '/videos',
 
   apiPosterPath: 'https://image.tmdb.org/t/p/w500/'
 };

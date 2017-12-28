@@ -23,4 +23,12 @@ export class SearchService {
   getSeriesDetails(idProd): Observable<any> {
     return this.http.get(environment.apiDetailsTv + idProd + environment.apiParams);
   }
+
+  getMovieTrailer(idProd): Observable<any> {
+    return this.http.get(environment.apiDetailsMovie + idProd + environment.apiVideos + environment.apiParams);
+  }
+
+  getTvTrailer(idProd): Observable<any> {
+    return this.http.get(environment.apiDetailsTv + idProd + environment.apiVideos + environment.apiParams);
+  }
 }

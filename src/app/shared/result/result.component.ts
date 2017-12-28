@@ -17,12 +17,15 @@ export class ResultComponent {
   genre: string;
   poster: string;
   details = [];
+  videoId: string;
   isFavorite: boolean;
+  showVideo: boolean = false;
 
   constructor(public searchService: SearchService) {};
 
   ngOnInit() {
     this.getDetails(this.idProd, this.prodType);
+    this.getTrailer(this.idProd, this.prodType);
     this.isFavorite = this.checkFav(this.idProd, this.prodType);
   }
 
@@ -42,6 +45,23 @@ export class ResultComponent {
         result => {
           this.details = result,
           this.poster = environment.apiPosterPath + result.poster_path
+        }
+      );
+    }
+  }
+
+  getTrailer(idProd, prodType) {
+    const VIDEO_TYPE = 'trailer';
+    if (prodType === 'typeMovie') {
+      return this.searchService.getMovieTrailer(idProd).subscribe(
+        result => {
+            this.videoId = result.results[0].key;
+        }
+      );
+    } else if (prodType === 'typeSeries') {
+      return this.searchService.getTvTrailer(idProd).subscribe(
+        result => {
+            this.videoId = result.results[0].key;
         }
       );
     }
@@ -84,7 +104,10 @@ export class ResultComponent {
   }
 
   viewTrailer() {
-    console.log('this is the trailer');
+    this.showVideo = true;
   }
 
+  closeTrailer() {
+    this.showVideo = false;
+  }
 }
